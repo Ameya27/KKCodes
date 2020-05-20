@@ -4,8 +4,8 @@ using namespace std;
 typedef long long ll;
 
 struct Node{
-    int sum;
-    int formula;
+    ll sum;
+    ll formula;
 };
 typedef struct Node Node;
 
@@ -15,7 +15,7 @@ int get_Mid(int a,int b){
 }
 
 
-int sum_Interval(Node* ptr,int ind,int l,int r,int start,int end){
+ll sum_Interval(Node* ptr,int ind,int l,int r,int start,int end){
     if(l>end || r<start){
         return 0;
     }
@@ -29,8 +29,8 @@ int sum_Interval(Node* ptr,int ind,int l,int r,int start,int end){
 }
 
 
-int Sum(Node* st,int left,int right,int n){
-    int val=sum_Interval(st,0,left,right,1,n);
+ll Sum(Node* st,int left,int right,int n){
+    ll val=sum_Interval(st,0,left,right,1,n);
     if((left&1)==0){
         val*=-1;
     }
@@ -116,7 +116,7 @@ int main(){
         int expo=(int)ceil(log2(N));
         int size=(int)(pow(2,expo+1)-1);
         //print_ST(Mod_Segtree,0,size);
-        int tot=0;
+        ll tot=0;
         while(Q--){
             char decision;
             int a1,a2;
@@ -130,7 +130,7 @@ int main(){
                     break;
             }
         }
-        printf("Case #%d: %d\n",(c),tot);
+        printf("Case #%d: %lld\n",(c),tot);
         //print_ST(Mod_Segtree,0,size);
         c+=1;
     }
