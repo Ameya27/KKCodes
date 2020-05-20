@@ -130,7 +130,7 @@ int main(){
                     break;
             }
         }
-        printf("Case #%d: %d\n",(c),tot);
+        printf("Case #%d: %lld\n",(c),tot);
         //print_ST(Mod_Segtree,0,size);
         c+=1;
     }
